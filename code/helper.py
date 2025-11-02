@@ -44,12 +44,9 @@
 
 import json
 
-# Input and output files
 input_file = r"C:\\Users\\mohit\\Hack the burg\data\\synthetic_data.jsonl"
-     # your original synthetic dataset
 output_file =  r"C:\\Users\\mohit\\Hack the burg\data\\final_synthetic_data.jsonl"
 
-# Read all JSONL entries
 updated_entries = []
 with open(input_file, "r", encoding="utf-8") as f:
     for line in f:
@@ -57,16 +54,15 @@ with open(input_file, "r", encoding="utf-8") as f:
         data = entry.get("data", {})
         for venue in data.get("venues", []):
             space_type = venue.get("space_type", "").lower()
-            amenities = set(venue.get("amenities", []))  # make unique
+            amenities = set(venue.get("amenities", []))  
 
-            # Add relevant amenities for lecture theatres and conference rooms
             if "lecture theatre" in space_type or "conference" in space_type:
                 amenities.update([
                     "chairs", "desks", "microphones", "projector screen",
                     "lighting", "podium", "air conditioning"
                 ])
 
-            # Add relevant amenities for other space types
+
             elif "seminar" in space_type:
                 amenities.update(["chairs", "desks", "whiteboard", "air conditioning"])
             elif "meeting room" in space_type:
@@ -86,16 +82,14 @@ with open(input_file, "r", encoding="utf-8") as f:
             elif "foyer" in space_type or "reception" in space_type:
                 amenities.update(["seating area", "power outlets", "decorative plants"])
 
-            # Update the venue's amenities
             venue["amenities"] = sorted(amenities)
 
-        # Add updated entry back to list
         updated_entries.append(entry)
 
-# Write updated data back to JSONL
 with open(output_file, "w", encoding="utf-8") as f:
     for e in updated_entries:
         json.dump(e, f, ensure_ascii=False)
         f.write("\n")
 
 print(f"✅ Updated venues saved to {output_file}")
+
