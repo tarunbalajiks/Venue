@@ -39,7 +39,6 @@ def infer_building_fallback(url: str) -> str:
 def random_walk_time():
     return f"{random.randint(5, 15)} min walk"
 
-# ---------- Educated guesses ----------
 def guess_capacity(space_type: str):
     st = (space_type or "").lower()
     if "lecture" in st or "theatre" in st or "theater" in st:
@@ -69,7 +68,6 @@ def ensure_defaults_for_group(g):
         g["best_suited_for"] = guess_best_suited(g.get("space_type"))
     if not g.get("amenities"):
         g["amenities"] = ["Wi-Fi", "AV/Projector", "Accessibility"]
-    # normalize identifiers if present
     if g.get("identifiers") is not None and not isinstance(g["identifiers"], list):
         g["identifiers"] = []
     return g
@@ -99,19 +97,18 @@ def explode_groups_to_instances(building_name, distance_from_main_campus, groups
         capacity = g.get("capacity")
         best = g.get("best_suited_for")
         amenities = g.get("amenities") or []
-        identifiers = g.get("identifiers") or []  # NEW: specific room numbers/names
+        identifiers = g.get("identifiers") or []  
         count = int(g.get("count") or 0)
 
         base = f"{slugify_name(building_name)}_{slugify_name(space_type)}"
 
         if identifiers:
-            # Use explicit identifiers, e.g., LG.09
             for ident in identifiers:
                 display_name = ident.strip()
                 canonical = f"{slugify_name(building_name)}_{slugify_name(display_name)}"
                 venues.append({
-                    "name": display_name,                      # exact room code/name, e.g., "LG.09"
-                    "canonical_name": canonical,               # e.g., "McEwan_Hall_LG_09"
+                    "name": display_name,                      
+                    "canonical_name": canonical,               
                     "space_type": space_type,
                     "capacity": capacity,
                     "best_suited_for": best,
@@ -119,7 +116,7 @@ def explode_groups_to_instances(building_name, distance_from_main_campus, groups
                     "distance_from_main_campus": distance_from_main_campus
                 })
         else:
-            # Fall back to count-based explosion
+
             if count <= 0:
                 count = 1
             for i in range(1, count + 1):
@@ -135,13 +132,12 @@ def explode_groups_to_instances(building_name, distance_from_main_campus, groups
 
     for s in singles or []:
         s = ensure_defaults_for_single(s)
-        display_name = s.get("name")  # may be "LG.09" or a unique room title
+        display_name = s.get("name") 
         space_type = (s.get("space_type") or "Room").strip()
         if display_name:
             canonical = f"{slugify_name(building_name)}_{slugify_name(display_name)}"
-            name_out = display_name  # keep exact given name/number
+            name_out = display_name  
         else:
-            # fabricate only if no explicit name is provided
             base = f"{slugify_name(building_name)}_{slugify_name(space_type)}"
             canonical = base
             name_out = base
@@ -167,7 +163,6 @@ async def main(venueUrl):
         result = await crawler.arun(url=venueUrl)
         text_content = result.markdown
 
-        # H1 as building name; fallback to URL
         building_name = None
         for line in text_content.splitlines():
             if line.startswith("# "):
@@ -176,7 +171,6 @@ async def main(venueUrl):
         if not building_name:
             building_name = infer_building_fallback(venueUrl)
 
-        # Prompt now supports 'identifiers' inside groups and exact singles.
         prompt = f"""
 You are a highly precise data extraction engine.
 
@@ -246,7 +240,6 @@ Now extract from this text:
         if not raw.get("building_name"):
             raw["building_name"] = building_name
 
-        # Randomize distance 5–15 min if missing
         distance = raw.get("distance_from_main_campus") or random_walk_time()
 
         expanded = explode_groups_to_instances(
@@ -270,4 +263,5 @@ if __name__ == "__main__":
         print(f"Crawling URL: {venueUrl}")
         asyncio.run(main(venueUrl))
     print("Crawling completed.")
+
 
