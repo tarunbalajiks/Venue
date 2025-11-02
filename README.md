@@ -37,7 +37,7 @@
 
 ## 🧠 Overview
 
-**VenueVerse** is an *Agentic AI* system that autonomously reasons through venue data — capacities, amenities, accessibility, and policies — to recommend the **most optimal venue** for a given event scenario.
+**V.E.N.U.E** is an *Agentic AI* system that autonomously reasons through venue data — capacities, amenities, accessibility, and policies — to recommend the **most optimal venue** for a given event scenario.
 
 It combines:
 - 🧩 **Neo4j Knowledge Graph** — structured venue–amenity–policy relationships  
@@ -94,7 +94,7 @@ It combines:
 
 ## 🧰 Tech Stack
 
-**Frontend:** React 18, TypeScript, TailwindCSS, `react-force-graph-2d`  
+**Frontend:** React 18, TailwindCSS, `react-force-graph-2d`  
 **Backend:** Python **3.13**, FastAPI  
 **Graph DB:** Neo4j AuraDB  
 **Agents/LLM:** Gemini 2.0 Flash 
@@ -150,36 +150,6 @@ score = 0.65 * amenity_score
       + 0.15 * coverage
       - 0.20 * slack_penalty
 ```
-
----
-
-## 🔌 API
-
-### `POST /api/ranking/topk`
-**Body**
-```json
-{
-  "attendees": 200,
-  "required_amenities": ["wi-fi","av/projector","accessibility","power outlets","whiteboard"],
-  "k": 5
-}
-```
-**Response (abridged)**
-```json
-[
-  {
-    "venue": "Appleton Tower LT1",
-    "capacity": 300,
-    "coverage": 0.8,
-    "slack": 100,
-    "score": 0.83
-  }
-]
-```
-
-### `GET /api/graph/reasoning`
-Returns compact `{ nodes, links, path }` for `react-force-graph-2d` to animate the decision trace.
-
 ---
 
 ## 🧠 Visualization (React)
@@ -194,7 +164,11 @@ Use the provided `ReasoningGraph.tsx` to highlight the traversal (orange edges +
 
 ## 🗺️ Screenshots
 
-> _Drop screenshots or GIFs here (UI, graph animation, top‑k table, etc.)._
+<img src="./WhatsApp Image 2025-11-02 at 11.15.14 AM.jpeg"></img>
+<img src="./WhatsApp Image 2025-11-02 at 11.17.18 AM.jpeg"></img>
+<img src="./WhatsApp Image 2025-11-02 at 11.19.10 AM.jpeg"></img>
+<img src="./WhatsApp Image 2025-11-02 at 11.20.08 AM.jpeg"></img>
+
 
 ---
 
@@ -210,9 +184,9 @@ Use the provided `ReasoningGraph.tsx` to highlight the traversal (orange edges +
 
 ## 👥 Contributors
 
-| Name | Role | Focus |
-|------|------|-------|
-| Team Mango Sticky Rice | — | Collective genius 💡 |
+| Name | Role |
+|------|------|
+|Tarun Balaji K S | AI Engineer |
 
 ---
 
