@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "label": "Query",
+      "group": "root",
+      "val": 8,
+      "meta": {
+        "attendees": 200,
+        "min_coverage": 0.6,
+        "required": [
+          "wi-fi",
+          "av/projector",
+          "accessibility",
+          "power outlets",
+          "whiteboard"
+        ]
+      }
+    },
+    {
+      "id": "step_capacity",
+      "label": "Capacity \u2265 200  (kept 0/68)",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "step_coverage",
+      "label": "Coverage \u2265 0.6  (kept 15/0)",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "step_scoring",
+      "label": "Score = 0.65*Coverage + 0.15*Coverage - 0.20*SlackPenalty",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3",
+      "label": "appleton_tower_lecture_theatre_3 \u00b7 cap 200 \u00b7 score 0.38",
+      "group": "best",
+      "val": 7,
+      "meta": {
+        "coverage": 0.6,
+        "slack": 0,
+        "matched": 3
+      }
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall",
+      "label": "reid concert hall \u00b7 cap 220 \u00b7 score 0.289",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.6,
+        "slack": 20,
+        "matched": 3
+      }
+    },
+    {
+      "id": "venue_50_george_square_lecture_theatre_g_03",
+      "label": "lecture theatre g.03 \u00b7 cap 255 \u00b7 score 0.28",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.6,
+        "slack": 55,
+        "matched": 3
+      }
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity"
+    },
+    {
+      "id": "final",
+      "label": "Selected \u2192 appleton_tower_lecture_theatre_3",
+      "group": "final",
+      "val": 8
+    }
+  ],
+  "links": [
+    {
+      "source": "root",
+      "target": "step_capacity"
+    },
+    {
+      "source": "step_capacity",
+      "target": "step_coverage"
+    },
+    {
+      "source": "step_coverage",
+      "target": "step_scoring"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_appleton_tower_lecture_theatre_3"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_reid_concert_hall_reid_concert_hall"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_50_george_square_lecture_theatre_g_03"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3",
+      "target": "venue_appleton_tower_lecture_theatre_3_matched"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_wi-fi"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_av/projector"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_accessibility"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3",
+      "target": "final"
+    },
+    {
+      "source": "final",
+      "target": "root"
+    }
+  ],
+  "path": [
+    {
+      "source": "root",
+      "target": "step_capacity"
+    },
+    {
+      "source": "step_capacity",
+      "target": "step_coverage"
+    },
+    {
+      "source": "step_coverage",
+      "target": "step_scoring"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_appleton_tower_lecture_theatre_3"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3",
+      "target": "final"
+    }
+  ],
+  "textInformation": "Reasoning: start \u2192 capacity filter (kept 0/68) \u2192 coverage \u2265 0.6 (kept 15/0) \u2192 score (coverage vs slack) \u2192 select best.\nReq amenities: wi-fi, av/projector, accessibility, power outlets, whiteboard."
+}

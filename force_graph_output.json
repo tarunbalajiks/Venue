@@ -1,0 +1,775 @@
+{
+  "nodes": [
+    {
+      "id": "root_selection",
+      "label": "Venue Selection",
+      "group": "root",
+      "val": 8,
+      "meta": {
+        "attendees": 200,
+        "k": 5,
+        "min_coverage": 0.6
+      }
+    },
+    {
+      "id": "filters",
+      "label": "Filters",
+      "group": "filters",
+      "val": 5
+    },
+    {
+      "id": "filter_attendees",
+      "label": "Attendees \u2265 200",
+      "group": "filters"
+    },
+    {
+      "id": "filter_mincov",
+      "label": "Coverage \u2265 0.6",
+      "group": "filters"
+    },
+    {
+      "id": "filter_amenities",
+      "label": "Required Amenities",
+      "group": "filters"
+    },
+    {
+      "id": "req_wi-fi",
+      "label": "wi-fi",
+      "group": "req"
+    },
+    {
+      "id": "req_av/projector",
+      "label": "av/projector",
+      "group": "req"
+    },
+    {
+      "id": "req_accessibility",
+      "label": "accessibility",
+      "group": "req"
+    },
+    {
+      "id": "req_power outlets",
+      "label": "power outlets",
+      "group": "req"
+    },
+    {
+      "id": "req_whiteboard",
+      "label": "whiteboard",
+      "group": "req"
+    },
+    {
+      "id": "candidates",
+      "label": "Candidates",
+      "group": "candidates",
+      "val": 5
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3",
+      "label": "appleton_tower_lecture_theatre_3 \u00b7 cap 200 \u00b7 score 0.38",
+      "group": "venue",
+      "val": 6,
+      "meta": {
+        "coverage": 0.6,
+        "amenityScore": 0.6,
+        "slack": 0,
+        "matched": 3,
+        "capacity": 200
+      }
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_stats",
+      "label": "Stats",
+      "group": "stats"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_coverage",
+      "label": "Coverage: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_amenityscore",
+      "label": "AmenityScore: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_slack",
+      "label": "Slack: 0",
+      "group": "stat"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_matchedcount",
+      "label": "Matched: 3/5",
+      "group": "stat"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_matched_group",
+      "label": "Matched Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_missing_group",
+      "label": "Missing Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_x_power outlets",
+      "label": "power outlets",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_0_appleton_tower_lecture_theatre_3_x_whiteboard",
+      "label": "whiteboard",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall",
+      "label": "reid concert hall \u00b7 cap 220 \u00b7 score 0.289",
+      "group": "venue",
+      "val": 6,
+      "meta": {
+        "coverage": 0.6,
+        "amenityScore": 0.6,
+        "slack": 20,
+        "matched": 3,
+        "capacity": 220
+      }
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_stats",
+      "label": "Stats",
+      "group": "stats"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_coverage",
+      "label": "Coverage: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_amenityscore",
+      "label": "AmenityScore: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_slack",
+      "label": "Slack: 20",
+      "group": "stat"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_matchedcount",
+      "label": "Matched: 3/5",
+      "group": "stat"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_matched_group",
+      "label": "Matched Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_missing_group",
+      "label": "Missing Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_x_power outlets",
+      "label": "power outlets",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_1_reid_concert_hall_reid_concert_hall_x_whiteboard",
+      "label": "whiteboard",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03",
+      "label": "lecture theatre g.03 \u00b7 cap 255 \u00b7 score 0.28",
+      "group": "venue",
+      "val": 6,
+      "meta": {
+        "coverage": 0.6,
+        "amenityScore": 0.6,
+        "slack": 55,
+        "matched": 3,
+        "capacity": 255
+      }
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_stats",
+      "label": "Stats",
+      "group": "stats"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_coverage",
+      "label": "Coverage: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_amenityscore",
+      "label": "AmenityScore: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_slack",
+      "label": "Slack: 55",
+      "group": "stat"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_matchedcount",
+      "label": "Matched: 3/5",
+      "group": "stat"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_matched_group",
+      "label": "Matched Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_missing_group",
+      "label": "Missing Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_x_power outlets",
+      "label": "power outlets",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_2_50_george_square_lecture_theatre_g_03_x_whiteboard",
+      "label": "whiteboard",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2",
+      "label": "appleton_tower_lecture_theatre_2 \u00b7 cap 300 \u00b7 score 0.28",
+      "group": "venue",
+      "val": 6,
+      "meta": {
+        "coverage": 0.6,
+        "amenityScore": 0.6,
+        "slack": 100,
+        "matched": 3,
+        "capacity": 300
+      }
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_stats",
+      "label": "Stats",
+      "group": "stats"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_coverage",
+      "label": "Coverage: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_amenityscore",
+      "label": "AmenityScore: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_slack",
+      "label": "Slack: 100",
+      "group": "stat"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_matchedcount",
+      "label": "Matched: 3/5",
+      "group": "stat"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_matched_group",
+      "label": "Matched Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_missing_group",
+      "label": "Missing Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_x_power outlets",
+      "label": "power outlets",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_3_appleton_tower_lecture_theatre_2_x_whiteboard",
+      "label": "whiteboard",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1",
+      "label": "appleton_tower_lecture_theatre_1 \u00b7 cap 300 \u00b7 score 0.28",
+      "group": "venue",
+      "val": 6,
+      "meta": {
+        "coverage": 0.6,
+        "amenityScore": 0.6,
+        "slack": 100,
+        "matched": 3,
+        "capacity": 300
+      }
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_stats",
+      "label": "Stats",
+      "group": "stats"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_coverage",
+      "label": "Coverage: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_amenityscore",
+      "label": "AmenityScore: 0.6",
+      "group": "stat"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_slack",
+      "label": "Slack: 100",
+      "group": "stat"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_matchedcount",
+      "label": "Matched: 3/5",
+      "group": "stat"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_matched_group",
+      "label": "Matched Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_missing_group",
+      "label": "Missing Amenities",
+      "group": "amenities"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_m_av/projector",
+      "label": "av/projector",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity_matched"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_x_power outlets",
+      "label": "power outlets",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_4_appleton_tower_lecture_theatre_1_x_whiteboard",
+      "label": "whiteboard",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "final_selection",
+      "label": "Selected: appleton_tower_lecture_theatre_3 \u00b7 cap 200 \u00b7 score 0.38",
+      "group": "final",
+      "val": 7
+    }
+  ],
+  "links": [
+    {
+      "source": "root_selection",
+      "target": "filters"
+    },
+    {
+      "source": "filters",
+      "target": "filter_attendees"
+    },
+    {
+      "source": "filters",
+      "target": "filter_mincov"
+    },
+    {
+      "source": "filters",
+      "target": "filter_amenities"
+    },
+    {
+      "source": "filter_amenities",
+      "target": "req_wi-fi"
+    },
+    {
+      "source": "filter_amenities",
+      "target": "req_av/projector"
+    },
+    {
+      "source": "filter_amenities",
+      "target": "req_accessibility"
+    },
+    {
+      "source": "filter_amenities",
+      "target": "req_power outlets"
+    },
+    {
+      "source": "filter_amenities",
+      "target": "req_whiteboard"
+    },
+    {
+      "source": "root_selection",
+      "target": "candidates"
+    },
+    {
+      "source": "candidates",
+      "target": "venue_0_appleton_tower_lecture_theatre_3"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_stats"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_stats",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_coverage"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_stats",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_amenityscore"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_stats",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_slack"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_stats",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_matchedcount"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_matched_group"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_missing_group"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_matched_group",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_m_wi-fi"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_matched_group",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_m_av/projector"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_matched_group",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_m_accessibility"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_missing_group",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_x_power outlets"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3_missing_group",
+      "target": "venue_0_appleton_tower_lecture_theatre_3_x_whiteboard"
+    },
+    {
+      "source": "candidates",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_stats"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_stats",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_coverage"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_stats",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_amenityscore"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_stats",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_slack"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_stats",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_matchedcount"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_matched_group"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_missing_group"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_matched_group",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_m_wi-fi"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_matched_group",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_m_av/projector"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_matched_group",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_m_accessibility"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_missing_group",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_x_power outlets"
+    },
+    {
+      "source": "venue_1_reid_concert_hall_reid_concert_hall_missing_group",
+      "target": "venue_1_reid_concert_hall_reid_concert_hall_x_whiteboard"
+    },
+    {
+      "source": "candidates",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_stats"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_stats",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_coverage"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_stats",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_amenityscore"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_stats",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_slack"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_stats",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_matchedcount"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_matched_group"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_missing_group"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_matched_group",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_m_wi-fi"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_matched_group",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_m_av/projector"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_matched_group",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_m_accessibility"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_missing_group",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_x_power outlets"
+    },
+    {
+      "source": "venue_2_50_george_square_lecture_theatre_g_03_missing_group",
+      "target": "venue_2_50_george_square_lecture_theatre_g_03_x_whiteboard"
+    },
+    {
+      "source": "candidates",
+      "target": "venue_3_appleton_tower_lecture_theatre_2"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_stats"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_stats",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_coverage"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_stats",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_amenityscore"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_stats",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_slack"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_stats",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_matchedcount"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_matched_group"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_missing_group"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_matched_group",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_m_wi-fi"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_matched_group",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_m_av/projector"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_matched_group",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_m_accessibility"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_missing_group",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_x_power outlets"
+    },
+    {
+      "source": "venue_3_appleton_tower_lecture_theatre_2_missing_group",
+      "target": "venue_3_appleton_tower_lecture_theatre_2_x_whiteboard"
+    },
+    {
+      "source": "candidates",
+      "target": "venue_4_appleton_tower_lecture_theatre_1"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_stats"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_stats",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_coverage"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_stats",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_amenityscore"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_stats",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_slack"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_stats",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_matchedcount"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_matched_group"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_missing_group"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_matched_group",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_m_wi-fi"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_matched_group",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_m_av/projector"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_matched_group",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_m_accessibility"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_missing_group",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_x_power outlets"
+    },
+    {
+      "source": "venue_4_appleton_tower_lecture_theatre_1_missing_group",
+      "target": "venue_4_appleton_tower_lecture_theatre_1_x_whiteboard"
+    },
+    {
+      "source": "root_selection",
+      "target": "final_selection"
+    },
+    {
+      "source": "venue_0_appleton_tower_lecture_theatre_3",
+      "target": "final_selection"
+    }
+  ],
+  "textInformation": "Query reasoning for attendees=200, k=5, min_coverage=0.6. Required amenities: wi-fi, av/projector, accessibility, power outlets, whiteboard.\nScore = 0.65*AmenityScore + 0.15*Coverage - 0.20*SlackPenalty.",
+  "graphPathVisualisation": {
+    "1": [
+      {
+        "source": "venue_0_appleton_tower_lecture_theatre_3_m_wi-fi",
+        "target": "venue_0_appleton_tower_lecture_theatre_3"
+      },
+      {
+        "source": "venue_0_appleton_tower_lecture_theatre_3_m_av/projector",
+        "target": "venue_0_appleton_tower_lecture_theatre_3"
+      },
+      {
+        "source": "venue_0_appleton_tower_lecture_theatre_3_m_accessibility",
+        "target": "venue_0_appleton_tower_lecture_theatre_3"
+      }
+    ],
+    "2": [
+      {
+        "source": "venue_0_appleton_tower_lecture_theatre_3",
+        "target": "final_selection"
+      },
+      {
+        "source": "final_selection",
+        "target": "root_selection"
+      }
+    ]
+  }
+}

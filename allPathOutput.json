@@ -1,0 +1,410 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "label": "Query",
+      "group": "root",
+      "val": 8,
+      "meta": {
+        "attendees": 200,
+        "min_coverage": 0.3,
+        "required": [
+          "wi-fi",
+          "seating area",
+          "projector",
+          "lighting",
+          "sound system",
+          "accessibility"
+        ]
+      }
+    },
+    {
+      "id": "step_capacity",
+      "label": "Capacity ≥ 200  (kept 0/68)",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "step_coverage",
+      "label": "Coverage ≥ 0.3  (kept 15/0)",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "step_scoring",
+      "label": "Score = 0.65*Coverage + 0.15*Coverage - 0.20*SlackPenalty",
+      "group": "step",
+      "val": 6
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall",
+      "label": "reid concert hall · cap 220 · score 0.476",
+      "group": "best",
+      "val": 7,
+      "meta": {
+        "coverage": 0.833,
+        "slack": 20,
+        "matched": 5,
+        "score": 0.476,
+        "capacity": 220
+      }
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_m_seating area",
+      "label": "seating area",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_m_lighting",
+      "label": "lighting",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_m_sound system",
+      "label": "sound system",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_missing",
+      "label": "Missing amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_reid_concert_hall_reid_concert_hall_x_projector",
+      "label": "projector",
+      "group": "amenity_missing"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library",
+      "label": "playfair library · cap 450 · score 0.467",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.833,
+        "slack": 250,
+        "matched": 5,
+        "score": 0.467,
+        "capacity": 450
+      }
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_m_seating area",
+      "label": "seating area",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_m_lighting",
+      "label": "lighting",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_m_sound system",
+      "label": "sound system",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_old_college_and_playfair_library_playfair_library_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3",
+      "label": "appleton_tower_lecture_theatre_3 · cap 200 · score 0.3",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.5,
+        "slack": 0,
+        "matched": 3,
+        "score": 0.3,
+        "capacity": 200
+      }
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_wi-fi",
+      "label": "wi-fi",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_lighting",
+      "label": "lighting",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_appleton_tower_lecture_theatre_3_m_accessibility",
+      "label": "accessibility",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_marchmont_sports_complex_main_sports_hall",
+      "label": "main sports hall · cap 200 · score 0.3",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.5,
+        "slack": 0,
+        "matched": 3,
+        "score": 0.3,
+        "capacity": 200
+      }
+    },
+    {
+      "id": "venue_marchmont_sports_complex_main_sports_hall_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_marchmont_sports_complex_main_sports_hall_m_seating area",
+      "label": "seating area",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_marchmont_sports_complex_main_sports_hall_m_lighting",
+      "label": "lighting",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_marchmont_sports_complex_main_sports_hall_m_sound system",
+      "label": "sound system",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_stockbridge_hall_main_auditorium",
+      "label": "main auditorium · cap 250 · score 0.2",
+      "group": "shortlist",
+      "val": 4,
+      "meta": {
+        "coverage": 0.5,
+        "slack": 50,
+        "matched": 3,
+        "score": 0.2,
+        "capacity": 250
+      }
+    },
+    {
+      "id": "venue_stockbridge_hall_main_auditorium_matched",
+      "label": "Matched amenities",
+      "group": "explain"
+    },
+    {
+      "id": "venue_stockbridge_hall_main_auditorium_m_projector",
+      "label": "projector",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_stockbridge_hall_main_auditorium_m_lighting",
+      "label": "lighting",
+      "group": "amenity"
+    },
+    {
+      "id": "venue_stockbridge_hall_main_auditorium_m_sound system",
+      "label": "sound system",
+      "group": "amenity"
+    },
+    {
+      "id": "final",
+      "label": "Selected → reid concert hall · score 0.476",
+      "group": "final",
+      "val": 8
+    }
+  ],
+  "links": [
+    {
+      "source": "root",
+      "target": "step_capacity"
+    },
+    {
+      "source": "step_capacity",
+      "target": "step_coverage"
+    },
+    {
+      "source": "step_coverage",
+      "target": "step_scoring"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_reid_concert_hall_reid_concert_hall"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall",
+      "target": "venue_reid_concert_hall_reid_concert_hall_matched"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "target": "venue_reid_concert_hall_reid_concert_hall_m_wi-fi"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "target": "venue_reid_concert_hall_reid_concert_hall_m_seating area"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "target": "venue_reid_concert_hall_reid_concert_hall_m_lighting"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "target": "venue_reid_concert_hall_reid_concert_hall_m_sound system"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_matched",
+      "target": "venue_reid_concert_hall_reid_concert_hall_m_accessibility"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall",
+      "target": "venue_reid_concert_hall_reid_concert_hall_missing"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall_missing",
+      "target": "venue_reid_concert_hall_reid_concert_hall_x_projector"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_old_college_and_playfair_library_playfair_library"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library",
+      "target": "venue_old_college_and_playfair_library_playfair_library_matched"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "target": "venue_old_college_and_playfair_library_playfair_library_m_wi-fi"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "target": "venue_old_college_and_playfair_library_playfair_library_m_seating area"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "target": "venue_old_college_and_playfair_library_playfair_library_m_lighting"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "target": "venue_old_college_and_playfair_library_playfair_library_m_sound system"
+    },
+    {
+      "source": "venue_old_college_and_playfair_library_playfair_library_matched",
+      "target": "venue_old_college_and_playfair_library_playfair_library_m_accessibility"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_appleton_tower_lecture_theatre_3"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3",
+      "target": "venue_appleton_tower_lecture_theatre_3_matched"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_wi-fi"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_lighting"
+    },
+    {
+      "source": "venue_appleton_tower_lecture_theatre_3_matched",
+      "target": "venue_appleton_tower_lecture_theatre_3_m_accessibility"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_marchmont_sports_complex_main_sports_hall"
+    },
+    {
+      "source": "venue_marchmont_sports_complex_main_sports_hall",
+      "target": "venue_marchmont_sports_complex_main_sports_hall_matched"
+    },
+    {
+      "source": "venue_marchmont_sports_complex_main_sports_hall_matched",
+      "target": "venue_marchmont_sports_complex_main_sports_hall_m_seating area"
+    },
+    {
+      "source": "venue_marchmont_sports_complex_main_sports_hall_matched",
+      "target": "venue_marchmont_sports_complex_main_sports_hall_m_lighting"
+    },
+    {
+      "source": "venue_marchmont_sports_complex_main_sports_hall_matched",
+      "target": "venue_marchmont_sports_complex_main_sports_hall_m_sound system"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_stockbridge_hall_main_auditorium"
+    },
+    {
+      "source": "venue_stockbridge_hall_main_auditorium",
+      "target": "venue_stockbridge_hall_main_auditorium_matched"
+    },
+    {
+      "source": "venue_stockbridge_hall_main_auditorium_matched",
+      "target": "venue_stockbridge_hall_main_auditorium_m_projector"
+    },
+    {
+      "source": "venue_stockbridge_hall_main_auditorium_matched",
+      "target": "venue_stockbridge_hall_main_auditorium_m_lighting"
+    },
+    {
+      "source": "venue_stockbridge_hall_main_auditorium_matched",
+      "target": "venue_stockbridge_hall_main_auditorium_m_sound system"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall",
+      "target": "final"
+    },
+    {
+      "source": "final",
+      "target": "root"
+    }
+  ],
+  "path": [
+    {
+      "source": "root",
+      "target": "step_capacity"
+    },
+    {
+      "source": "step_capacity",
+      "target": "step_coverage"
+    },
+    {
+      "source": "step_coverage",
+      "target": "step_scoring"
+    },
+    {
+      "source": "step_scoring",
+      "target": "venue_reid_concert_hall_reid_concert_hall"
+    },
+    {
+      "source": "venue_reid_concert_hall_reid_concert_hall",
+      "target": "final"
+    }
+  ],
+  "textInformation": "Reasoning: start → capacity filter (kept 0/68) → coverage ≥ 0.3 (kept 15/0) → score (coverage vs slack) → select best.\nReq amenities: wi-fi, seating area, projector, lighting, sound system, accessibility."
+}
