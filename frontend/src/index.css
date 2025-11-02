@@ -1,0 +1,504 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #000000;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+/* Apply Venue Verse font style globally */
+* {
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+/* Keep bold text bold */
+b, strong, .font-bold, h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Fractal Glass Background with Blue Gradient - Applied to entire page */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  /* Black base */
+  background-color: #000000;
+  /* Blue gradient - horizontal (dark navy to cyan) */
+  background-image: 
+    linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.8) 0%,
+      rgba(30, 64, 175, 0.7) 15%,
+      rgba(59, 130, 246, 0.6) 35%,
+      rgba(96, 165, 250, 0.55) 55%,
+      rgba(147, 197, 253, 0.5) 75%,
+      rgba(191, 219, 254, 0.45) 100%
+    );
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: 0 0;
+}
+
+/* Fractal glass vertical strips overlay - separate pseudo element for better control */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* Fractal glass vertical strips - very visible */
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 0.8px,
+      rgba(147, 197, 253, 0.6) 1px,
+      rgba(147, 197, 253, 0.6) 1.5px,
+      rgba(96, 165, 250, 0.5) 1.8px,
+      rgba(96, 165, 250, 0.5) 2.2px,
+      transparent 2.5px,
+      transparent 4px
+    ),
+    /* Glass refraction - beveled edges creating depth */
+    repeating-linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.3) 0px,
+      rgba(59, 130, 246, 0.15) 0.5px,
+      transparent 1px,
+      transparent 1.5px,
+      rgba(30, 64, 175, 0.25) 2px,
+      transparent 2.5px,
+      transparent 4px
+    ),
+    /* Grain texture */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.3'/%3E%3C/svg%3E");
+  
+  background-blend-mode: screen, overlay, overlay;
+  background-size: 4px 100%, 4px 100%, 400px 400px;
+  background-position: 0 0, 0 0, 0 0;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+@keyframes chromeShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-chrome-bg {
+  animation: chromeShimmer 20s ease-in-out infinite;
+  background-size: 300% 300%;
+}
+
+/* Grainy Texture Overlay - Applied globally */
+/* Fine-grained noise texture matching the fractal glass effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 1;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-size: 400px 400px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom scrollbar for webkit browsers - Dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.6) 0%,
+    rgba(37, 99, 235, 0.6) 35%,
+    rgba(29, 78, 216, 0.6) 65%,
+    rgba(30, 64, 175, 0.6) 100%
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(37, 99, 235, 0.8) 35%,
+    rgba(29, 78, 216, 0.8) 65%,
+    rgba(30, 64, 175, 0.8) 100%
+  );
+}
+
+/* Hide horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  display: none;
+}
+
+/* Hide scrollbar but maintain scroll functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Smooth transitions for input area */
+.input-area-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient Background Container - Uses global gradient */
+.fractal-glass-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: transparent;
+  z-index: 0;
+}
+
+/* Container-specific gradient overlay can be added here if needed */
+
+/* Grainy drift motion */
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-8px, -8px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Gentle random grain movement */
+@keyframes grainDrift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -6px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Matte Glass Panel with Gradient Outline */
+.glass-panel {
+  position: relative;
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+/* Gradient border using ::before - creates the gradient background - Blue gradient */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Inner background using ::after - covers center, leaving border visible - Matte glass */
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content is above the border */
+.glass-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect for interactive panels - Matte glass */
+.glass-panel:hover::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+.glass-panel:hover {
+  background: rgba(15, 15, 20, 0.7);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+}
+
+.glass-panel:focus-within::before {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+.glass-panel:focus-within {
+  background: rgba(15, 15, 20, 0.7);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+}
+
+/* Dark Panel without glow (for static elements) */
+.dark-panel {
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Graph Panel - Gradient Outline Only (No Glass Effect) */
+.graph-panel {
+  position: relative;
+  background: #000000;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+/* Gradient border for graph panel */
+.graph-panel::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Inner background - black to cover gradient and leave only border visible */
+.graph-panel::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000000;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content is above the border */
+.graph-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Venue Card - Blue Gradient Outline */
+.venue-card {
+  position: relative;
+  background: #000000;
+  isolation: isolate;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Gradient border for venue card */
+.venue-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Inner background - black to cover gradient and leave only border visible */
+.venue-card::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000000;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content is above the border */
+.venue-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient Button - Fully colored with gradient - Blue gradient */
+.gradient-outline-button {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: 300 !important;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+/* Hover effect for button */
+.gradient-outline-button:hover {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.6),
+    0 0 40px rgba(37, 99, 235, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.gradient-outline-button:focus {
+  outline: none;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.6),
+    0 0 40px rgba(37, 99, 235, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.gradient-outline-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.4),
+    0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text - For "Venue Verse" and "VS" - Blue gradient */
+.gradient-text {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 1) 0%,
+    rgba(37, 99, 235, 1) 35%,
+    rgba(29, 78, 216, 1) 65%,
+    rgba(30, 64, 175, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Error Text - Red gradient */
+.error-text {
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 1) 0%,
+    rgba(220, 38, 38, 1) 35%,
+    rgba(185, 28, 28, 1) 65%,
+    rgba(153, 27, 27, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
