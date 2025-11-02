@@ -12,7 +12,6 @@ from queryGraph import build_reasoning_path_for_query
 
 
 class EventExtractionState(TypedDict):
-    """Schema defining the state across extraction workflow."""
     query: str
     organizer: Optional[str]
     event_type: Optional[str]
@@ -35,7 +34,6 @@ llm = ChatGoogleGenerativeAI(
 
 
 def extract_intent_node(state: EventExtractionState) -> EventExtractionState:
-    """Extracts structured event information from natural language query."""
     query = state["query"]
 
     system_prompt = system_prompt = """You are an expert event coordinator specializing in matching events to appropriate venues.
@@ -114,7 +112,6 @@ Always include accessibility and safety considerations.
 
 
 def validate_extraction_node(state: EventExtractionState) -> EventExtractionState:
-    """Validates extracted data for completeness and correctness."""
     errors = []
 
     if not state.get("organizer"):
@@ -128,7 +125,6 @@ def validate_extraction_node(state: EventExtractionState) -> EventExtractionStat
 
 
 def enrich_constraints_node(state: EventExtractionState) -> EventExtractionState:
-    """Adds contextual enrichment to constraints."""
     event_type = state.get("event_type", "")
     attendees = state.get("attendees", 0)
     existing_constraints = state.get("constraints", [])
@@ -177,14 +173,12 @@ def format_output_node(state: EventExtractionState) -> EventExtractionState:
 
 
 def should_retry(state: EventExtractionState) -> Literal["extract_intent", "validate"]:
-    """Determines whether to retry extraction or move to validation."""
     if state.get("error") and state.get("retry_count", 0) < 2:
         return "extract_intent"
     return "validate"
 
 
 def should_enrich(state: EventExtractionState) -> Literal["enrich_constraints", "format_output"]:
-    """Determines whether to trigger constraint enrichment."""
     if state.get("needs_enrichment", False) and not state.get("error"):
         return "enrich_constraints"
     return "format_output"
@@ -192,7 +186,6 @@ def should_enrich(state: EventExtractionState) -> Literal["enrich_constraints", 
 
 
 def create_advanced_extraction_graph():
-    """Creates and compiles the LangGraph workflow."""
     workflow = StateGraph(EventExtractionState)
 
     workflow.add_node("extract_intent", extract_intent_node)
@@ -218,17 +211,9 @@ def create_advanced_extraction_graph():
 
 
 def display_results(state: dict, show_enrichment: bool = True) -> None:
-    """
-    Display the extracted event details in a clean, professional format.
-
-    Args:
-        state (dict): Dictionary containing event extraction data.
-        show_enrichment (bool): Whether to display enriched constraints.
-    """
     divider = "=" * 60
     print(f"\n{divider}\nEVENT EXTRACTION RESULTS\n{divider}")
 
-    # Handle errors
     if state.get("error"):
         print(f"\nERROR: {state['error']}")
         if state.get("raw_extraction"):
@@ -237,13 +222,11 @@ def display_results(state: dict, show_enrichment: bool = True) -> None:
         print(f"\n{divider}\n")
         return
 
-    # Core information
     print(f"\nQuery: {state.get('query', 'N/A')}")
     print(f"Organizer: {state.get('organizer', 'N/A')}")
     print(f"Event Type: {state.get('event_type', 'N/A')}")
     print(f"Attendees: {state.get('attendees', 'N/A')}")
 
-    # Requirements
     print("\nRequirements:")
     requirements = state.get("requirements", [])
     if requirements:
@@ -252,7 +235,6 @@ def display_results(state: dict, show_enrichment: bool = True) -> None:
     else:
         print("  - None specified")
 
-    # Constraints
     print("\nConstraints:")
     constraints = state.get("constraints", [])
     if constraints:
@@ -261,7 +243,6 @@ def display_results(state: dict, show_enrichment: bool = True) -> None:
     else:
         print("  - None identified")
 
-    # Enriched Constraints (optional)
     if show_enrichment and state.get("enriched_constraints"):
         print("\nEnriched Constraints:")
         for ec in state["enriched_constraints"]:
@@ -316,3 +297,4 @@ if __name__ == "__main__":
 
         # with open("allPathOutput.json", "w", encoding="utf-8") as f:
         #     json.dump(payload, f, ensure_ascii=False, indent=2)
+
