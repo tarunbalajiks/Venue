@@ -186,8 +186,12 @@ Use the provided `ReasoningGraph.tsx` to highlight the traversal (orange edges +
 
 | Name | Role |
 |------|------|
-|Tarun Balaji K S | AI Engineer |
-
+|Tarun Balaji K S | AI + Graph |
+|Jaden Menezes | AI |
+|Ajay Kanan | Full Stack |
+|Mohit Raval | Graph |
+|Atharv Salian | AWS |
+|Aditya Pandey | AWS |
 ---
 
 ## 📜 License
